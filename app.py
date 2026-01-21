@@ -8,80 +8,142 @@ st.write("మన ఇంటి రుచులు – మీ దగ్గర ఉ�
 lang = st.selectbox("Language / భాష", ["English", "Telugu"])
 
 
-# --------- SMART RECIPE GENERATOR ---------
-
 def ai_recipe(items, lang):
 
     veg = items.lower()
 
-    # ===== BIRYANI STYLE =====
+    # -------- BIRYANI LOGIC --------
     if "rice" in veg and ("briyani" in veg or "biryani" in veg or "spices" in veg):
 
         if lang == "English":
-            return f"""
-Dish Name: Simple Veg Biryani (Home Style)
 
-Ingredients:
-- 1 cup rice  
-- {veg}  
-- 2 onions sliced  
-- 1 tomato  
-- 2 tsp biryani masala  
-- 1 tsp ginger garlic paste  
-- 2 tbsp oil  
-- salt as needed  
-- coriander leaves  
+            text = "Dish Name: Simple Veg Biryani (Home Style)\n\n"
+            text += "Ingredients:\n"
+            text += "- 1 cup rice\n"
+            text += "- " + veg + "\n"
+            text += "- 2 onions sliced\n"
+            text += "- 1 tomato\n"
+            text += "- 2 tsp biryani masala\n"
+            text += "- 1 tsp ginger garlic paste\n"
+            text += "- salt as needed\n\n"
 
-Preparation Steps:
-1. Wash rice and soak for 15 minutes  
-2. Heat oil and fry onions till golden  
-3. Add tomato + ginger garlic  
-4. Add vegetables and biryani masala  
-5. Add rice with 2 cups water  
-6. Cover and cook on low flame 15 minutes  
+            text += "Steps:\n"
+            text += "1. Wash rice and soak 15 minutes\n"
+            text += "2. Fry onions till golden\n"
+            text += "3. Add tomato and ginger garlic\n"
+            text += "4. Add vegetables and masala\n"
+            text += "5. Add rice with 2 cups water\n"
+            text += "6. Cook 15 minutes on low flame\n\n"
 
-Time required: 25 minutes
+            text += "Time: 25 minutes\n\n"
+            text += "Amma Tip: Add little ghee for nice aroma 💚"
 
-Amma Tip:
-Add one spoon ghee on top for nice biryani aroma 💚
-"""
+            return text
 
         else:
-            return f"""
-వంటకం పేరు: సింపుల్ వెజ్ బిర్యానీ
 
-కావలసినవి:
-- 1 కప్పు బియ్యం  
-- {veg}  
-- 2 ఉల్లిపాయలు  
-- 1 టమాటా  
-- 2 స్పూన్లు బిర్యానీ మసాలా  
-- 1 స్పూన్ అల్లం వెల్లుల్లి పేస్ట్  
-- ఉప్పు  
-- కొత్తిమీర  
+            text = "వంటకం పేరు: సింపుల్ వెజ్ బిర్యానీ\n\n"
+            text += "కావలసినవి:\n"
+            text += "- 1 కప్పు బియ్యం\n"
+            text += "- " + veg + "\n"
+            text += "- 2 ఉల్లిపాయలు\n"
+            text += "- 1 టమాటా\n"
+            text += "- బిర్యానీ మసాలా\n\n"
 
-తయారీ విధానం:
-1. బియ్యం 15 నిమిషాలు నానబెట్టండి  
-2. నూనెలో ఉల్లి బంగారు రంగు వచ్చే వరకు వేయించండి  
-3. టమాటా + అల్లం వెల్లుల్లి వేయండి  
-4. కూరగాయలు + బిర్యానీ మసాలా  
-5. బియ్యం + 2 కప్పుల నీరు  
-6. మూత పెట్టి 15 నిమిషాలు మగ్గించండి  
+            text += "తయారీ విధానం:\n"
+            text += "1. బియ్యం 15 నిమిషాలు నానబెట్టండి\n"
+            text += "2. ఉల్లి వేయించండి\n"
+            text += "3. టమాటా వేసండి\n"
+            text += "4. కూరగాయలు + మసాలా\n"
+            text += "5. బియ్యం + నీరు\n"
+            text += "6. 15 నిమిషాలు మగ్గించండి\n\n"
 
-పట్టే సమయం: 25 నిమిషాలు
+            text += "పట్టే సమయం: 25 నిమిషాలు\n\n"
+            text += "అమ్మ చిట్కా: చివరగా నెయ్యి వేస్తే సూపర్ 💚"
 
-అమ్మ చిట్కా:
-చివరగా ఒక స్పూన్ నెయ్యి వేస్తే వాసన సూపర్ 💚
-"""
+            return text
 
-    # ===== NORMAL CURRY STYLE =====
+
+    # -------- NORMAL CURRY --------
 
     if lang == "English":
 
-        return f"""
-Dish Name: {veg.title()} Curry
+        text = "Dish Name: " + veg.title() + " Curry\n\n"
+        text += "Ingredients:\n"
+        text += "- " + veg + "\n"
+        text += "- onion, tomato\n"
+        text += "- salt, chilli, turmeric\n\n"
 
-Ingredients:
-- {veg}
-- 1 onion  
-- 1 to
+        text += "Steps:\n"
+        text += "1. Fry onion tomato\n"
+        text += "2. Add masala\n"
+        text += "3. Add " + veg + "\n"
+        text += "4. Cook 10 minutes\n\n"
+
+        text += "Time: 15 minutes\n"
+        text += "Tip: Add little water 💚"
+
+        return text
+
+    else:
+
+        text = "వంటకం పేరు: " + veg + " కర్రీ\n\n"
+        text += "కావలసినవి:\n"
+        text += "- " + veg + "\n"
+        text += "- ఉల్లి, టమాటా\n"
+        text += "- ఉప్పు, కారం, పసుపు\n\n"
+
+        text += "విధానం:\n"
+        text += "1. ఉల్లి టమాటా వేయించండి\n"
+        text += "2. మసాలా వేయండి\n"
+        text += "3. " + veg + " కలపండి\n"
+        text += "4. 10 నిమిషాలు\n\n"
+
+        text += "చిట్కా: కొద్దిగా నీరు వేయండి 💚"
+
+        return text
+
+
+
+# -------- APP MENU --------
+
+menu = st.sidebar.selectbox(
+    "Menu",
+    ["Cook With Ingredients",
+     "Priya Specials",
+     "Healthy Tips"]
+)
+
+
+if menu == "Cook With Ingredients":
+
+    items = st.text_area("Ingredients / పదార్థాలు")
+
+    if st.button("Suggest Recipe"):
+
+        if items.strip() == "":
+            st.write("Please enter ingredients 😊")
+        else:
+            st.write(ai_recipe(items, lang))
+
+
+elif menu == "Priya Specials":
+
+    st.subheader("Priya Specials 💖")
+
+    st.write("""
+• Gulab Jamun Ice Cream  
+• Veg Biryani  
+• Methi Chaman  
+• Mango Dal  
+• Coconut Pickle  
+""")
+
+
+elif menu == "Healthy Tips":
+
+    st.write("""
+• ఎక్కువ నూనె వద్దు  
+• రోజూ ఒక ఆకు కూర  
+• ఇంటి భోజనం ఆరోగ్యం 💚  
+""")
